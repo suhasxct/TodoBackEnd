@@ -60,7 +60,7 @@ async function startserver() {
   await clientRedis.connect();
   app.listen({ port }, () => {
     console.log(
-      `Running a GraphQL API server at http://localhost:${port}/graphql`
+      `Running a GraphQL API server at http://localhost:${process.env.NODE_PORT}/graphql`
     );
   });
 }

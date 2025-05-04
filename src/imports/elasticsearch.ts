@@ -1,6 +1,6 @@
 import { Client } from "@elastic/elasticsearch";
 export const clientElasticsearch = new Client({
-  node: `https://localhost:${process.env.Port}`,
+  node: `https://localhost:${process.env.ELASTIC_PORT}`,
   auth: {
     username: process.env.ELASTIC_USERNAME ?? "",
     password: process.env.ELASTIC_PASSWORD ?? "",
