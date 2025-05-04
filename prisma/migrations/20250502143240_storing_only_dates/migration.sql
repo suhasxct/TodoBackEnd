@@ -1,0 +1,3 @@
+-- AlterTable
+ALTER TABLE "Todo" ALTER COLUMN "createddate" SET DATA TYPE DATE,
+ALTER COLUMN "updateddate" SET DATA TYPE DATE;
