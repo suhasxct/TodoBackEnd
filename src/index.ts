@@ -50,7 +50,9 @@ app.get(
       expiresIn: "7d",
     });
 
-    res.redirect(`http://localhost:5173/oauth-success?token=${token}`);
+    res.redirect(
+      `https://todo-front-end-fawn.vercel.app/oauth-success?token=${token}`
+    );
   }
 );
 
