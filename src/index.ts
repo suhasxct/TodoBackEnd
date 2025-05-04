@@ -7,7 +7,6 @@ import login from "./Routes/RestApi/login";
 import { schema } from "./Routes/Graphql/TodoSchema/schema";
 import { root } from "./Routes/Graphql/TodoResolver/resolver";
 import { context } from "./middleware/context";
-import { clientRedis } from "./imports/redis";
 import { rateLimit } from "express-rate-limit";
 import jwt from "jsonwebtoken";
 import passport from "passport";
@@ -17,7 +16,6 @@ export const client = new PrismaClient();
 
 export default client;
 const app = express();
-const port: any = process.env.port;
 const limiter = rateLimit({
   windowMs: 15 * 60 * 1000,
   limit: 100,
@@ -56,11 +54,6 @@ app.get(
   }
 );
 
-async function startserver() {
-  app.listen({ port }, () => {
-    console.log(
-      `Running a GraphQL API server at http://localhost:${process.env.NODE_PORT}/graphql`
-    );
-  });
-}
-startserver();
+app.listen(process.env.NODE_PORT, () => {
+  console.log("Server Running at Port:4000");
+});
