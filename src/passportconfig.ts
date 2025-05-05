@@ -10,7 +10,8 @@ passport.use(
     {
       clientID: GOOGLE_CLIENT_ID,
       clientSecret: GOOGLE_CLIENT_SECRET,
-      callbackURL: "/auth/google/callback",
+      callbackURL:
+        "https://todobackend-pro.up.railway.app/auth/google/callback",
     },
     async (_accessToken, _refreshToken, profile, done) => {
       try {
